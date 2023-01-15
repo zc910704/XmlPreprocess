@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <Target Outputs="$(SwrFilePath)"
+    Condition="'$(DotNetBuildFromSource)' != 'true'">
+    <PropertyGroup>
+      <OutputRoot Condition=" '$(OutputRoot)'=='' ">..\Publish\Out\</OutputRoot>
+    </PropertyGroup>
+    <ItemGroup>
+      <FileWrites Include="$(SwrFilePath)"/>
+    </ItemGroup>
+  </Target>
+  <Import Project="..\Import.xml"/>
+</Project>
